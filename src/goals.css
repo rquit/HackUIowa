@@ -105,16 +105,36 @@ ul {
 @media(max-width: 1000px) {
     .goal-submission {
         inherits: all;
-        max-width: 80vw;
+        max-width: 90vw;
     }
 
     .goal {
         inherits: all;
-        width: 80vw;
+        width: 90vw;
     }
 
     .title {
         inherits: all;
         font-size: 1.4rem;
+    }
+
+    .goal-submission-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #header-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    #header-button {
+        margin-top: 0;
+    }
+
+    .submit-button {
+        margin-bottom: 0.5rem;
     }
 }

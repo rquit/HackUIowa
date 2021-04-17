@@ -38,7 +38,7 @@ export default function Goal() {
           <ul className="goal-submission-header">
             <li><label htmlFor="submit-form-title">Add New Goal</label></li>
             <div id="header-buttons">
-            <li id="header-button"><button className="btn btn-outline-info goal-submit" type="submit">Submit</button></li>
+            <li id="header-button"><button className="btn btn-outline-info goal-submit submit-button" type="submit">Submit</button></li>
             <li id="header-button">
               <label htmlFor="checkbox-hide" className="btn btn-outline-dark">Hide</label>
               <input id="checkbox-hide" type='checkbox' data-toggle='collapse' data-target='.collapsediv1'></input>
