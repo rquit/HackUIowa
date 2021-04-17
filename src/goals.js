@@ -40,8 +40,12 @@ export default function Goal() {
             <div id="header-buttons">
             <li id="header-button"><button className="btn btn-outline-info goal-submit" type="submit">Submit</button></li>
             <li id="header-button">
-              <label htmlFor="checkbox-hide" className="btn btn-outline-danger">Hide</label>
+              <label htmlFor="checkbox-hide" className="btn btn-outline-dark">Hide</label>
               <input id="checkbox-hide" type='checkbox' data-toggle='collapse' data-target='.collapsediv1'></input>
+            </li>
+            <li id="header-button">
+              <label htmlFor="checkbox-hide-2" className="btn btn-outline-dark">Hide Goals</label>
+              <input id="checkbox-hide-2" type='checkbox' data-toggle='collapse' data-target='.collapsediv2'></input>
             </li>
             </div>
           </ul>
@@ -74,7 +78,7 @@ function Goals(props) {
             <li><p className="title">{title}</p></li>
             <li><button onClick={removeGoal} className="btn btn-outline-danger">Remove</button></li>
           </ul>
-          <p>{text}</p>
+          <p className="collapsediv2">{text}</p>
         </div>
     )
 }

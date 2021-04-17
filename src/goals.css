@@ -33,6 +33,10 @@
     display: none;
 }
 
+#checkbox-hide-2 {
+    display: none;
+}
+
 li > label {
     font-size: 2rem;
 }
