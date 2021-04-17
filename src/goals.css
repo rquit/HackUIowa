@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     max-width: 40vw;
-    margin: 1rem auto;
+    margin: 1rem auto 2rem auto;
     border-radius: 5px;
     padding: 1rem;
     border: 1px solid grey;
@@ -32,9 +32,33 @@ form > label {
     align-self: center;
 }
 
+.goals-visual {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.goal {
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    width: 40vw;
+    margin: auto auto 1rem auto;
+    padding: 1rem;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
 @media(max-width: 1000px) {
     .goal-submission {
         inherits: all;
         max-width: 80vw;
+    }
+
+    .goal {
+        inherits: all;
+        width: 80vw;
     }
 }

@@ -40,9 +40,11 @@ export default function Goal() {
           <textarea className="submit-form-desc" placeholder="Give some details! Keep it short, simple and attainable!" value={formValue} onChange={(e) => setFormValue(e.target.value)} />
           <button className="btn btn-outline-info goal-submit" type="submit">Submit</button>
         </form>
-        <ul>
-            {goals && goals.map(goal => <Goals key={goal.id} goal={goal} />)}
-        </ul>
+        <div className="goals-visual">
+          <ul>
+              {goals && goals.map(goal => <Goals key={goal.id} goal={goal} />)}
+          </ul>
+        </div>
     </div>
     )
 }
@@ -51,7 +53,7 @@ function Goals(props) {
     const { title, text } = props.goal;
   
     return (
-        <div>
+        <div className="goal">
             <h3>{title}</h3>
             <p>{text}</p>
         </div>
