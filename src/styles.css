@@ -1,4 +1,8 @@
 .App {
   font-family: sans-serif;
-  text-align: center;
+}
+
+.sign-out {
+  position: absolute;
+  margin-top: 1rem;
 }

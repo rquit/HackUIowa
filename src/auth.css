@@ -1,0 +1,9 @@
+.login {
+    margin: 1rem auto;
+    max-width: 50vw;
+    text-align: center;
+}
+
+.button-login {
+    padding: 1rem;
+}

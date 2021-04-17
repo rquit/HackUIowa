@@ -1,5 +1,6 @@
 import Init from "./initialize.js";
 import firebase from "firebase/app";
+import "./auth.css";
 
 Init();
 
@@ -12,16 +13,18 @@ function Login() {
     }
   
     return (
-      <>
-      <h1>You must be logged in to access this page.</h1><br />
-      <button onClick={signInWithGoogle}>Sign In With Google</button>
-      </>
+      <div className="login">
+        <h1>We require you to sign in for full functionality.</h1><br />
+        <button className="btn btn-primary button-login" onClick={signInWithGoogle}>Sign In With Google</button>
+        <p></p>
+        <p>If you don't want to sign in, we have some info about the app available on the "About" page!</p>
+      </div>
     )
 }
 
 function Logout() {
     return auth.currentUser && (
-      <button onClick={() => auth.signOut()}>Sign Out</button>
+      <button className="btn btn-outline-danger" onClick={() => auth.signOut()}>Sign Out</button>
     )
 }
 
