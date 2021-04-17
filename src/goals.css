@@ -1,0 +1,33 @@
+.goal-submission {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 40vw;
+    margin: 1rem auto;
+    border-radius: 5px;
+    padding: 1rem;
+    border: 1px solid grey;
+}
+
+.submit-form-desc {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    height: 10vh;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid rgb(182, 182, 182);
+}
+
+.goal-submit {
+    align-self: center;
+}
+
+.submit-form-title {
+    border-radius: 5px;
+    border: 1px solid rgb(182, 182, 182);
+    padding: 0.5rem;
+}
+
+form > label {
+    align-self: center;
+}
