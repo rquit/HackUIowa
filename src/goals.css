@@ -44,7 +44,7 @@ li > label {
 .submit-form-desc {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-    height: 10vh;
+    height: 20vh;
     padding: 0.5rem;
     border-radius: 5px;
     border: 1px solid rgb(182, 182, 182);
@@ -75,9 +75,9 @@ form > label {
 .goal {
     border-radius: 5px;
     border: 1px solid rgb(163, 163, 163);
-    width: 40vw;
+    width: 50vw;
     margin: auto auto 1rem auto;
-    padding: 1rem;
+    padding: 1rem 1rem 0.5rem 1rem;
 }
 
 .goal > ul {
@@ -91,7 +91,7 @@ form > label {
     max-width: 40vw;
 }
 
-.goal > p {
+.goal-text {
     border: 1px solid rgb(190, 190, 190);
     padding: 1rem;
     text-align: left;
@@ -100,6 +100,17 @@ form > label {
 ul {
     padding: 0;
     list-style-type: none;
+}
+
+.date-timestamp {
+    padding: 0;
+    margin-bottom: 0.3rem;
+}
+
+.timestamp-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 @media(max-width: 1000px) {

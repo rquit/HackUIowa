@@ -12,12 +12,17 @@ const firestore = firebase.firestore();
 export default function Goal() {
     const { uid } = auth.currentUser;
     const goalsRef = firestore.collection(uid);
-    const query = goalsRef.orderBy("createdAt", "desc").limit(25);
+    const query = goalsRef.orderBy("dueDate", "asc").limit(25);
   
     const [goals] = useCollectionData(query, { idField: 'id' });
   
     const [title, setTitle] = useState("");
     const [formValue, setFormValue] = useState("");
+    const [dueDate, setDueDate] = useState("");
+
+    const newDate = new Date().toLocaleDateString();
+    const newTime = new Date().toLocaleTimeString();
+    const dateAndTime = ` ${newDate}, at ${newTime}`;
   
     const submitGoal = async(e) => {
       e.preventDefault();
@@ -25,11 +30,13 @@ export default function Goal() {
       await goalsRef.add({
         title: title,
         text: formValue,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        createdAt: dateAndTime,
+        dueDate: dueDate.replace(/-/g, "/").substr(5) + "/" + dueDate.replace(/-/g, "/").substr(0, 4),
       });
   
       setFormValue("");
       setTitle("");
+      setDueDate("");
     }
   
     return (
@@ -49,11 +56,14 @@ export default function Goal() {
             </li>
             </div>
           </ul>
+
           <div className="collapsediv1">
           <input required maxLength="30" id="submit-form-title" className="submit-form-title" placeholder="(required) What's your goal? Max: 30 characters." value={title} onChange={(e) => setTitle(e.target.value)} />
-          <textarea required className="submit-form-desc" placeholder="(required) Give some details! Keep it short, simple and attainable!" value={formValue} onChange={(e) => setFormValue(e.target.value)} />
+          <textarea required className="submit-form-desc" placeholder="(required) Give some details! Keep it short, simple and attainable! Enter a Due Date below." value={formValue} onChange={(e) => setFormValue(e.target.value)} />
+          <input required type="date"className="submit-form-title" value={dueDate} onChange={(e) => setDueDate(e.target.value)}></input>
           </div>
         </form>
+
         <div className="goals-visual">
           <ul>
               {goals && goals.map(goal => <Goals key={goal.id} goal={goal} />)}
@@ -65,7 +75,7 @@ export default function Goal() {
 
 function Goals(props) {
     const { uid } = auth.currentUser;
-    const { title, text } = props.goal;
+    const { title, text, createdAt, dueDate } = props.goal;
     const removeGoal = async(e) => {
       e.preventDefault();
 
@@ -78,7 +88,12 @@ function Goals(props) {
             <li><p className="title">{title}</p></li>
             <li><button onClick={removeGoal} className="btn btn-outline-success">I've Completed This</button></li>
           </ul>
-          <p className="collapsediv2">{text}</p>
+          <p className="collapsediv2 goal-text">{text}</p>
+          <div className="timestamp-container">
+            <p className="date-timestamp">Made: {createdAt}</p>
+            <p className="date-timestamp">Due: {dueDate}</p>
+          </div>
+          
         </div>
     )
 }
