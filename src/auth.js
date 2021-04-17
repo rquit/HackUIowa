@@ -14,10 +14,7 @@ function Login() {
   
     return (
       <div className="login">
-        <h1>We require you to sign in for full functionality.</h1><br />
         <button className="btn btn-primary button-login" onClick={signInWithGoogle}>Sign In With Google</button>
-        <p></p>
-        <p>If you don't want to sign in, we have some info about the app available on the "About" page!</p>
       </div>
     )
 }

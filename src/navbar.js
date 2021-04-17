@@ -1,8 +1,11 @@
 import "./navbar.css";
-import { Logout } from "./auth.js";
+import { Logout, Login } from "./auth.js";
+import { auth } from "./auth.js";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 // one of the default bootstrap navbars
 export default function Navbar() {
+    const [ user ] = useAuthState(auth);
     return(
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
             <a className="navbar-brand" href="/">Goals</a>
@@ -18,7 +21,7 @@ export default function Navbar() {
                         <a className="nav-link" href="/tips">Tips</a>
                     </li>
                 </ul>
-                <Logout />
+                {user ? <Logout /> : <Login />}
             </div>
         </nav>
     )
