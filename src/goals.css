@@ -31,3 +31,10 @@
 form > label {
     align-self: center;
 }
+
+@media(max-width: 1000px) {
+    .goal-submission {
+        inherits: all;
+        max-width: 80vw;
+    }
+}
