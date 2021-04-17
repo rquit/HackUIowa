@@ -35,12 +35,20 @@ export default function Goal() {
     return (
     <div>
         <form className="goal-submission" onSubmit={submitGoal}>
-          <ul>
+          <ul className="goal-submission-header">
             <li><label htmlFor="submit-form-title">Add New Goal</label></li>
-            <li><button className="btn btn-outline-info goal-submit" type="submit">Submit</button></li>
+            <div id="header-buttons">
+            <li id="header-button"><button className="btn btn-outline-info goal-submit" type="submit">Submit</button></li>
+            <li id="header-button">
+              <label htmlFor="checkbox-hide" className="btn btn-outline-danger">Hide</label>
+              <input id="checkbox-hide" type='checkbox' data-toggle='collapse' data-target='.collapsediv1'></input>
+            </li>
+            </div>
           </ul>
-          <input required maxLength="30" className="submit-form-title" placeholder="(required) What's your goal? Max: 30 characters." value={title} onChange={(e) => setTitle(e.target.value)} />
+          <div className="collapsediv1">
+          <input required maxLength="30" id="submit-form-title" className="submit-form-title" placeholder="(required) What's your goal? Max: 30 characters." value={title} onChange={(e) => setTitle(e.target.value)} />
           <textarea required className="submit-form-desc" placeholder="(required) Give some details! Keep it short, simple and attainable!" value={formValue} onChange={(e) => setFormValue(e.target.value)} />
+          </div>
         </form>
         <div className="goals-visual">
           <ul>
