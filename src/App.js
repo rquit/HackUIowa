@@ -8,8 +8,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 import { Login, auth } from "./auth.js";
 import Navbar from "./navbar.js";
-import Goal from "./goals.js"
-
+import Goal from "./goals.js";
+import About from "./about.js";
 
 export default function App() {
   const [ user ] = useAuthState(auth);
@@ -17,9 +17,10 @@ export default function App() {
     <div className="App">
       <Navbar />
       <Router>
-          <Switch>
-            <Route exact path="/" component={user ? Goal : Login} />
-          </Switch>
+        <Switch>
+          <Route exact path="/" component={user ? Goal : Login} />
+            <Route exact path="/about" component={About} />
+        </Switch>
       </Router>
     </div>
   );
