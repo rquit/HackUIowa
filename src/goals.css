@@ -16,6 +16,7 @@
     padding: 0.5rem;
     border-radius: 5px;
     border: 1px solid rgb(182, 182, 182);
+    box-shadow: none;
 }
 
 .goal-submit {
@@ -26,6 +27,7 @@
     border-radius: 5px;
     border: 1px solid rgb(182, 182, 182);
     padding: 0.5rem;
+    box-shadow: none;
 }
 
 form > label {

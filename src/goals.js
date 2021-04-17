@@ -36,8 +36,8 @@ export default function Goal() {
     <div>
         <form className="goal-submission" onSubmit={submitGoal}>
           <label htmlFor="submit-form-title"><strong>Add a new goal!</strong></label>
-          <input required maxLength="30" className="submit-form-title" placeholder="Goal. Max: 30 characters." value={title} onChange={(e) => setTitle(e.target.value)} />
-          <textarea className="submit-form-desc" placeholder="Give some details! Keep it short, simple and attainable!" value={formValue} onChange={(e) => setFormValue(e.target.value)} />
+          <input required maxLength="30" className="submit-form-title" placeholder="(required) What's your goal? Max: 30 characters." value={title} onChange={(e) => setTitle(e.target.value)} />
+          <textarea required className="submit-form-desc" placeholder="(required) Give some details! Keep it short, simple and attainable!" value={formValue} onChange={(e) => setFormValue(e.target.value)} />
           <button className="btn btn-outline-info goal-submit" type="submit">Submit</button>
         </form>
         <div className="goals-visual">
