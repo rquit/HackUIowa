@@ -76,7 +76,7 @@ function Goals(props) {
         <div className="goal">
           <ul>
             <li><p className="title">{title}</p></li>
-            <li><button onClick={removeGoal} className="btn btn-outline-danger">Remove</button></li>
+            <li><button onClick={removeGoal} className="btn btn-outline-success">Completed</button></li>
           </ul>
           <p className="collapsediv2">{text}</p>
         </div>
