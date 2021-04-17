@@ -1,6 +1,5 @@
 import Init from "./initialize.js";
 import firebase from "firebase/app";
-import "./auth.css";
 
 Init();
 

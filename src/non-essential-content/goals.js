@@ -6,7 +6,7 @@ import "./goals.css";
 
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
-import { auth } from "./auth.js"
+import { auth } from "../auth.js"
 const firestore = firebase.firestore();
 
 export default function Goal() {

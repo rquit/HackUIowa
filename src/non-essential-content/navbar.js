@@ -1,6 +1,6 @@
 import "./navbar.css";
-import { Logout, Login } from "./auth.js";
-import { auth } from "./auth.js";
+import { Logout, Login } from "../auth.js";
+import { auth } from "../auth.js";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 // one of the default bootstrap navbars

@@ -1,17 +1,16 @@
 import "./styles.css";
 import React from 'react';
-import "./styles.css";
 import "firebase/firestore";
 import "firebase/auth";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 import { auth } from "./auth.js";
-import Navbar from "./navbar.js";
-import Goal from "./goals.js";
-import About from "./about.js";
-import Tips from "./tips.js";
-import AboutLoggedOut from "./aboutLoggedOut.js";
+import Navbar from "./non-essential-content/navbar.js";
+import Goal from "./non-essential-content/goals.js";
+import About from "./non-essential-content/about.js";
+import Tips from "./non-essential-content/tips.js";
+import AboutLoggedOut from "./non-essential-content/aboutLoggedOut.js";
 
 export default function App() {
   const [ user ] = useAuthState(auth);
