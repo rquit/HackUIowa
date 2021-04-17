@@ -36,7 +36,7 @@ export default function Goal() {
     <div>
         <form className="goal-submission" onSubmit={submitGoal}>
           <label htmlFor="submit-form-title"><strong>Add a new goal!</strong></label>
-          <input className="submit-form-title" placeholder="Main goal" value={title} onChange={(e) => setTitle(e.target.value)} />
+          <input required maxLength="30" className="submit-form-title" placeholder="Goal. Max: 30 characters." value={title} onChange={(e) => setTitle(e.target.value)} />
           <textarea className="submit-form-desc" placeholder="Give some details! Keep it short, simple and attainable!" value={formValue} onChange={(e) => setFormValue(e.target.value)} />
           <button className="btn btn-outline-info goal-submit" type="submit">Submit</button>
         </form>
@@ -48,14 +48,23 @@ export default function Goal() {
     </div>
     )
 }
-  
+
 function Goals(props) {
+    const { uid } = auth.currentUser;
     const { title, text } = props.goal;
+    const removeGoal = async(e) => {
+      e.preventDefault();
+
+      await firestore.collection(uid).doc(props.goal.id).delete();
+    }
   
     return (
         <div className="goal">
-            <h3>{title}</h3>
-            <p>{text}</p>
+          <ul>
+            <li><p className="title">{title}</p></li>
+            <li><button onClick={removeGoal} className="btn btn-outline-danger">Remove</button></li>
+          </ul>
+          <p>{text}</p>
         </div>
     )
 }

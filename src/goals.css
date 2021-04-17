@@ -40,10 +40,27 @@ form > label {
 
 .goal {
     border-radius: 5px;
-    border: 1px solid lightgrey;
+    border: 1px solid rgb(163, 163, 163);
     width: 40vw;
     margin: auto auto 1rem auto;
     padding: 1rem;
+}
+
+.goal > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 2rem;
+    max-width: 40vw;
+}
+
+.goal > p {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 1rem;
+    text-align: left;
 }
 
 ul {
@@ -60,5 +77,10 @@ ul {
     .goal {
         inherits: all;
         width: 80vw;
+    }
+
+    .title {
+        inherits: all;
+        font-size: 1rem;
     }
 }
