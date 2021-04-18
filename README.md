@@ -6,9 +6,11 @@
 
 2. Copy the credentials it gives you under "web".
 
-3. Create a new file named `firebaseInit.json` in `/src`.
+3. `git clone` this repo to whatever folder you want it in.
 
-4. Paste the credentials inside the file, it should look like this:
+4. Create a new file named `firebaseInit.json` in `/src`.
+
+5. Paste the credentials inside the file, it should look like this:
 ```
 {
     "apiKey": "<your_apikey>",
@@ -21,6 +23,6 @@
 }
 ```
 
-5. Run `npm start`.
+6. Run `npm start`.
 
-6. Do whatever you want with it!
+7. Do whatever you want with it!
