@@ -89,6 +89,7 @@ form > label {
 .title {
     font-size: 2rem;
     max-width: 40vw;
+    overflow-x: auto;
 }
 
 .goal-text {
