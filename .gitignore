@@ -1,2 +1,4 @@
 node_modules
 firebaseInit*
+build
+*firebase*
