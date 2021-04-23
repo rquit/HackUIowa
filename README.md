@@ -1,4 +1,4 @@
-# Repository for my entry in the University of Iowa Hackathon
+# You can view this at https://goals.nabilto.com/
 
 ### If you want to host this yourself or use it for a project, follow these steps.
 
