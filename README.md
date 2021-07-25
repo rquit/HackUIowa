@@ -1,4 +1,4 @@
-# You can view this at https://goals.nabilto.com/
+# You can no longer view this at https://goals.nabilto.com/
 
 ### If you want to host this yourself or use it for a project, follow these steps.
 
